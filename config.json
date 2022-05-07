@@ -2,7 +2,7 @@
   "name": "one-app",
   "developer": {
     "archwayd": {
-      "docker": true
+      "docker": false
     },
     "scripts": {
       "test": "cargo unit-test",
@@ -12,7 +12,53 @@
       "query": "archwayd query wasm",
       "tx": "archwayd tx wasm execute"
     },
-    "deployments": []
+    "deployments": [
+      {
+        "type": "set-metadata",
+        "chainId": "torii-1",
+        "contract": "archway1ej34jymg04uh74y96e3xwryt3uzaq09cu2673683dxaka80eyuks067rnx",
+        "contractMetadata": {
+          "developerAddress": "archway14yuq6s3h3paddkspmg52a8juew5ca2h2zjekhp",
+          "rewardAddress": "archway14yuq6s3h3paddkspmg52a8juew5ca2h2zjekhp",
+          "gasRebate": true
+        }
+      },
+      {
+        "type": "instantiate",
+        "chainId": "torii-1",
+        "codeId": 49031,
+        "address": "archway1ej34jymg04uh74y96e3xwryt3uzaq09cu2673683dxaka80eyuks067rnx",
+        "admin": "archway14yuq6s3h3paddkspmg52a8juew5ca2h2zjekhp"
+      },
+      {
+        "type": "create",
+        "chainId": "torii-1",
+        "codeId": 49031
+      },
+      {
+        "type": "set-metadata",
+        "chainId": "torii-1",
+        "contract": "archway1m9w08e4wm6tm4tkpt0lkg4k8rgggmg8xmamr090x7py5wnwuc0yq6zs7zv",
+        "contractMetadata": {
+          "developerAddress": "archway14yuq6s3h3paddkspmg52a8juew5ca2h2zjekhp",
+          "rewardAddress": "archway14yuq6s3h3paddkspmg52a8juew5ca2h2zjekhp",
+          "collectPremium": true,
+          "premiumPercentage": 195
+        }
+      },
+      {
+        "type": "instantiate",
+        "chainId": "torii-1",
+        "codeId": 49028,
+        "address": "archway1m9w08e4wm6tm4tkpt0lkg4k8rgggmg8xmamr090x7py5wnwuc0yq6zs7zv",
+        "admin": "archway14yuq6s3h3paddkspmg52a8juew5ca2h2zjekhp"
+      },
+      {
+        "type": "create",
+        "chainId": "torii-1",
+        "codeId": 49028
+      }
+    ]
   },
   "network": {
     "name": "torii",
@@ -28,7 +74,7 @@
     },
     "wasm": {
       "bech32Hrp": "archway",
-      "archwayd": "0.0.4",
+      "archwayd": "0.0.5",
       "configDir": ".archway",
       "binary": "archwayd"
     },
